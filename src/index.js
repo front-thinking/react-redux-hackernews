@@ -7,7 +7,7 @@ import store from './store';
 
 
 ReactDOM.render(
-	<App stories={store.getState()} onArchive={()=>{console.log(123)}} />, 
+	<App stories={store.getState().storyState} onArchive={()=>{console.log(123)}} />, 
 	document.getElementById('root')
 );
 
