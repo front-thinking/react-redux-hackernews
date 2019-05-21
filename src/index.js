@@ -4,12 +4,13 @@ import './index.css';
 import App from './components/App';
 import store from './store';
 import { STORY_ARCHIVE } from './constants/actionTypes';
+import { getReadableStories } from './selectors/story';
 // import * as serviceWorker from './serviceWorker';
 
 
 ReactDOM.render(
 	<App 
-		stories={store.getState().storyState} 
+		stories={getReadableStories(store.getState())} 
 		onArchive={(id)=>{ store.dispatch({ type: STORY_ARCHIVE, id }) }} 
 	/>, 
 	document.getElementById('root')
