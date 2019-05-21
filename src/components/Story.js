@@ -1,3 +1,6 @@
+import { connect } from 'react-redux';
+import { doArchiveStory } from '../actions/archive';
+
 import React from 'react';
 import { ButtonInline } from './Button';
 import './Story.css';
@@ -20,5 +23,12 @@ const Story = ({ story, columns, onArchive }) => {
 		</div>
 	);
 }
+
+const mapDispatchToProps = dispatch => ({
+	onArchive: id => dispatch(doArchiveStory(id)),
+});
 	
-export default Story;
+export default connect(
+	null,
+	mapDispatchToProps
+)(Story);
